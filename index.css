@@ -1,8 +1,29 @@
 /*index.css*/
-h2 {
-  color: blue;
+body {
+  font-weight: 300;
+  font-size: 1rem;
+  background: -webkit-linear-gradient(
+    -70deg,
+    #a2facf,
+    #64acff
+  );
+  background-size: 400% 400%;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-container {
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+  background-color:azure;
+  font-family: 'Archivo Narrow', sans-serif;
+  color: #457ab7;
 }
 
 .delete {
-  margin-right: 5px;
+ font-size: .5rem;
+ align-items: center;
 }
+

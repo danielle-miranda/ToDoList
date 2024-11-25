@@ -2,12 +2,12 @@ $(document).ready(function(){
   var getAndDisplayAllTasks = function () {
     $.ajax({
       type: 'GET',
-      url: 'https://fewd-todolist-api.onrender.com/tasks?api_key=2',
+      url: 'https://fewd-todolist-api.onrender.com/tasks?api_key=1325',
       dataType: 'json',
       success: function (response, textStatus) {
         $('#todo-list').empty();
         response.tasks.forEach(function (task) {
-          $('#todo-list').append('<div class="row"><p class="col-xs-8">' + task.content + '</p><button class="delete" data-id="' + task.id + '">Delete</button><input type="checkbox" class="mark-complete" data-id="' + task.id + '"' + (task.completed ? 'checked' : '') + '>');
+          $('#todo-list').append('<div class="row m-3 ml-5"><input type="checkbox" class="mark-complete" data-id="' + task.id + '"' + (task.completed ? 'checked' : '') + '><p class="col-xs-8 m-3">' + task.content + '</p><div class="d-flex delete"><button  class="delete btn btn-danger btn-sm" data-id="' + task.id + '">X</button></div>');
         });
       },
       error: function (request, textStatus, errorMessage) {
@@ -19,7 +19,7 @@ $(document).ready(function(){
   var createTask = function () {
     $.ajax({
       type: 'POST',
-      url: 'https://fewd-todolist-api.onrender.com/tasks?api_key=2',
+      url: 'https://fewd-todolist-api.onrender.com/tasks?api_key=1325',
       contentType: 'application/json',
       dataType: 'json',
       data: JSON.stringify({
@@ -45,7 +45,7 @@ $(document).ready(function(){
   var deleteTask = function (id) {
     $.ajax({
       type: 'DELETE',
-      url: 'https://fewd-todolist-api.onrender.com/tasks/' + id + '?api_key=2',
+      url: 'https://fewd-todolist-api.onrender.com/tasks/' + id + '?api_key=1325',
       success: function (response, textStatus) {
         getAndDisplayAllTasks();
       },
@@ -62,7 +62,7 @@ $(document).ready(function(){
   var markTaskComplete = function (id) {
     $.ajax({
       type: 'PUT',
-      url: 'https://fewd-todolist-api.onrender.com/tasks/' + id + '/mark_complete?api_key=2',
+      url: 'https://fewd-todolist-api.onrender.com/tasks/' + id + '/mark_complete?api_key=1325',
       dataType: 'json',
       success: function (response, textStatus) {
         getAndDisplayAllTasks();
@@ -84,7 +84,7 @@ $(document).ready(function(){
   var markTaskActive = function (id) {
     $.ajax({
    type: 'PUT',
-      url: 'https://fewd-todolist-api.onrender.com/tasks/' + id + '/mark_active?api_key=2',
+      url: 'https://fewd-todolist-api.onrender.com/tasks/' + id + '/mark_active?api_key=1325',
       dataType: 'json',
       success: function (response, textStatus) {
         getAndDisplayAllTasks();
